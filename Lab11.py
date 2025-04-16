@@ -1,5 +1,6 @@
 import os
 import matplotlib.pyplot as plt
+import math
 
 # --- Load students into dictionary: id -> name ---
 def load_students(filepath):
@@ -72,9 +73,9 @@ def assignment_statistics(name, assignments, submissions):
 
     scores = [percent for _, aid, percent in submissions if aid == assignment_id]
     if scores:
-        print(f"Min: {round(min(scores))}%")
-        print(f"Avg: {round(sum(scores)/len(scores))}%")
-        print(f"Max: {round(max(scores))}%")
+        print(f"Min: {math.floor(min(scores))}%")
+        print(f"Avg: {math.floor(sum(scores)/len(scores))}%")
+        print(f"Max: {math.floor(max(scores))}%")
     else:
         print("No submissions found for that assignment")
 
